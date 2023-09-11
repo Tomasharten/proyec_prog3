@@ -1,11 +1,14 @@
+import React, { Component } from 'react'
+// import { Link } from 'react-router-dom';
+// import Pelicula from '../../components/Pelicula/Pelicula';
 
-function Home(){
-    return(
-        <h1>Home</h1>
-    )
+
+class Home extends Component {
+    render() {
+        return(
+            "Hola"
+        )
+    }
 }
-
-
-
-export default Home;
-
+ export default Home
+ 

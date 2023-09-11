@@ -4,7 +4,8 @@ import Favoritos from "./screens/Favoritos/Favoritos";
 import Populares from "./screens/Populares/Populares";
 import Estrenos from "./screens/Estrenos/Estrenos";
 import React from "react";
-import Header from "./components/header/Header"
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 /// import DetallePelicula from "./screens/DetallePelicula/DetallePelicula";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path = "/populares" component= {Populares}/>
       <Route path = "/estrenos" component={Estrenos} />
     </Switch>
+    <Footer/>
     </React.Fragment>    
   );
 }

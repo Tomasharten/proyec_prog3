@@ -1,0 +1,13 @@
+.portadaCard{ /*bloque del cuadrado de las peliculas en index*/
+    height: 443px;
+    width: 250px;
+    background-color:black;
+    margin-left:30px;
+    border-radius: 8px;
+    box-shadow:5px 10px rgb(243, 202, 162);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
