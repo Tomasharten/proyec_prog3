@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Formulario from '../../components/formulario/Formulario'
 // import { Link } from 'react-router-dom';
 // import Pelicula from '../../components/Pelicula/Pelicula';
 
@@ -6,9 +7,11 @@ import React, { Component } from 'react'
 class Home extends Component {
     render() {
         return(
-            "Hola"
+            <div> 
+                <Formulario/>
+            </div>
         )
     }
 }
- export default Home
+ export default Home
  
