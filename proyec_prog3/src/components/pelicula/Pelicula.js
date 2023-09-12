@@ -47,7 +47,7 @@ class Pelicula extends Component {
 
                 </>
               }
-                
+
               </article>
           
       )
