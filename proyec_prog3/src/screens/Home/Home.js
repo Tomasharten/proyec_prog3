@@ -12,7 +12,6 @@ class Home extends Component {
                 <br/>
                 <Seccion/>
                 <br/>
-                <p>Hola</p>
             </div>
         )
     }
