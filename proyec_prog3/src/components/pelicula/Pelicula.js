@@ -39,7 +39,7 @@ class Pelicula extends Component {
                     <Link to={`/detalle/${id}`} className="btn btn-warning" >Detalle</Link>
               </button>
               {
-                this.state.ver == false?
+                this.state.ver === false?
                 <button className='' onClick={()=> this.verMas()}>Ver más</button>
                 :
                 <>
