@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
-import Formulario from '../../components/formulario/Formulario'
-// import { Link } from 'react-router-dom';
-// import Pelicula from '../../components/Pelicula/Pelicula';
+// import Formulario from '../../components/formulario/Formulario'
+import Seccion from '../../components/seccion/Seccion'
+
 
 
 class Home extends Component {
     render() {
         return(
             <div> 
-                <Formulario/>
+                {/* <Formulario/> */}
+                <br/>
+                <Seccion/>
+                <br/>
             </div>
         )
     }

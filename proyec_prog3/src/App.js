@@ -17,6 +17,7 @@ function App() {
       <Route path = "/favoritos" component= {Favoritos}/>
       <Route path = "/populares" component= {Populares}/>
       <Route path = "/estrenos" component={Estrenos} />
+      {/* <Route path= "/formulario" component={Resultados}/> */}
     </Switch>
     <Footer/>
     </React.Fragment>    
