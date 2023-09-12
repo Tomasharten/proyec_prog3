@@ -31,7 +31,7 @@ class PeliculaEstreno extends Component {
 
               <article  className='portadaCard'>
               
-              <img class= "portada"src={poster_path} alt={title}/> 
+              <img className= "portada"src={poster_path} alt={title}/> 
               <h2>{title}</h2>
               <p>{overview}</p>
               {/* <button className="" onClick={()=>this.props.favorito(this.props.pelicula)}>Favoritos</button> */}
