@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 class Formulario extends Component {
     constructor (props){
         super (props); 
@@ -19,7 +19,7 @@ class Formulario extends Component {
     }
     render(){
         return(
-            <li> <form onSumbit= {(event)=> this.evitarSumbit(event)} class="formulario">
+            <li> <form onSumbit= {(event)=> this.evitarSumbit(event)} className="formulario">
                     <input type="text" onChange= {(event)=> this.controlarCambios(event)} value= {this.state.valor} name="formulario"placeholder='Buscar:' class="buscador"/>
                     <Link to={`/formulario/${this.state.valor}`}></Link>
                     <input type= "submit" value="Submit"/>

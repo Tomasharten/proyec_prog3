@@ -1,44 +1,50 @@
-import {Component} from "react";
+import React, {Component} from "react";
+import '../Detalles/Detalles.css'
+
 
 class DetallesPeli extends Component {
     
     constructor(props){
         super(props);
         this.state = {
-            id: props.match.params.id,
             pelicula:"",
             props:props
         }
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=75196a6b12119e0621f7373e3de1a94a`)   
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=75196a6b12119e0621f7373e3de1a94a`)   
         .then(res=>res.json())
-        .then(data=>this.setState({
+        .then(data=>{console.log(data);
+        this.setState({
             pelicula:data,
-        }))
+        })
+        }
+            
+            )
         .catch(erorres=>console.log("Estos son los errores"+ erorres))
     }
 
     render(){
         return(
-            <section class="contenedorpadre">
-            <div class="cajagrande">
+            
+            <section className="contenedorpadre">
+            <div className="cajagrande">
                 {this.state.pelicula !==""?
                 <>
-                    <img class="imgpelicula" src={this.state.pelicula.poster_path} alt=''/>
-                    <div class="contenedorpadre2">
-                        <h2 class="titulo" >{this.state.title}</h2> 
-                        <p class="calificacion"> {this.state.vote_average}</p>
-                        <p class="fecha"> {this.state.release_date}</p>
-                        <p class="genero">{this.state.genres} </p>
-                        <p class="duracion"> {this.state.runtime}</p>
-                        <p class="sinposis"> {this.state.overview}</p>
+                    <img className="imgpelicula" src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`}alt='por favor loco aparece'/>
+                    <div className="contenedorpadre2">
+                        <h2 className="titulo" >{this.state.pelicula.original_title}</h2> 
+                        <p className="calificacion"> {this.state.pelicula.vote_average}</p>
+                        <p className="fecha"> {this.state.pelicula.release_date}</p>
+                        <p className="genero">{this.state.pelicula.genres[0].name} </p>
+                        <p className="duracion"> {this.state.pelicula.runtime}</p>
+                        <p className="sinposis"> {this.state.pelicula.overview}</p>
 
-                        {/* <a class="botonFavs" href="">Agregar a favoritos</a>
+                        {/* <a className="botonFavs" href="">Agregar a favoritos</a>
                         <form action="" method=" GET">
-                            <input type="radio" name="Favoritos" value="Agregar a favoritos" class="circuloFavoritos"/> 
-                            <label class="favoritos"> Agregar a favoritos</label>
+                            <input type="radio" name="Favoritos" value="Agregar a favoritos" className="circuloFavoritos"/> 
+                            <label className="favoritos"> Agregar a favoritos</label>
                             <a href="favorite.html"></a>
                         </form> */}
                     </div> 

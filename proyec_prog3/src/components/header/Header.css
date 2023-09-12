@@ -1,0 +1,43 @@
+.header { 
+    display: flex;
+    height: 100px;
+    font-size: 10px;
+    color: rgb(255, 255, 255); 
+}
+.tit {
+    align-self: center;
+    font-family: AgrandirR;
+    font-weight: bold;
+}
+.menulink {
+    font-size: 16px;
+    font-family: Kollektif;
+    color: rgb(255, 255, 255);  
+    text-decoration: none;
+    padding: 30px;
+    transition: color .5s;
+}
+.menulink:hover {
+    color: pink;
+}
+.menu {
+    align-self: center;
+    padding: 120px;
+}    
+      
+/* .input {
+    align-self: center;
+}
+.buscador {
+    border-radius: 30px;
+    outline: none;
+    padding: 5px;
+    background-color: rgba(227, 224, 224, 0.763);
+}
+.botonBuscador {
+    border-radius: 30px;
+    padding: 7px;
+    background-color: rgba(227, 224, 224, 0.763);
+    font-family:Kollektif ;
+
+} */

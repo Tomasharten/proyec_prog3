@@ -25,15 +25,15 @@ class Pelicula extends Component {
 
   render() {
 
-    let {poster_path, title, overview, id} = this.props
+    let {poster_path, title, overview, id} = this.props.datospelicula
    
       return (
 
               <article  className='portadaCard'>
               
-              <img class= "portada"src={poster_path} alt={title}/> 
+              <img className= "portada"src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/> 
               <h2>{title}</h2>
-              <p>{overview}</p>
+              
               {/* <button className="" onClick={()=>this.props.favorito(this.props.pelicula)}>Favoritos</button> */}
               <button className='' >
                     <Link to={`/detalle/${id}`} className="btn btn-warning" >Detalle</Link>
@@ -41,13 +41,15 @@ class Pelicula extends Component {
               {
                 this.state.ver === false?
                 <button className='' onClick={()=> this.verMas()}>Ver más</button>
+                
                 :
                 <>
-                <button className='' onClick={()=> this.verMenos}> Ver menos </button>
-
+                <p>{overview}</p>
+                <button className='' onClick={()=> this.verMenos()}> Ver menos </button>
+                
                 </>
               }
-                
+
               </article>
           
       )

@@ -1,3 +1,5 @@
+import '../Favoritos/Favoritos.css'
+
 function Favoritos(){
     return(
         <h1>Favoritos</h1>

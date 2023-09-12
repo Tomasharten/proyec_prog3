@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import '../Populares/Populares.css'
+
 ///import Pelicula from '../../components/Pelicula/Pelicula';
 
 // class Populares extends Component {
