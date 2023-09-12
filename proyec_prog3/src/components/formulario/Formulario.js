@@ -20,8 +20,8 @@ class Formulario extends Component {
     render(){
         return(
             <li> <form onSumbit= {(event)=> this.evitarSumbit(event)} className="formulario">
-                    <input type="text" onChange= {(event)=> this.controlarCambios(event)} value= {this.state.valor} name="formulario"placeholder='Buscar:' class="buscador"/>
-                    <Link to={`/formulario/${this.state.valor}`}></Link>
+                    <input type="text" onChange= {(event)=> this.controlarCambios(event)} value= {this.state.valor} name="valor"placeholder='Buscar:' class="buscador"/>
+                    <Link to={`/valor/${this.state.valor}`}></Link>
                     <input type= "submit" value="Submit"/>
                 </form>
             </li>)

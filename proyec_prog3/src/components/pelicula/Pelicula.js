@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom' 
+import '../pelicula/Pelicula.css'
 
 class Pelicula extends Component {
 
@@ -28,31 +29,35 @@ class Pelicula extends Component {
     let {poster_path, title, overview, id} = this.props.datospelicula
    
       return (
-
-              <article  className='portadaCard'>
-              
-              <img className= "portada"src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/> 
-              <h2>{title}</h2>
-              
-              {/* <button className="" onClick={()=>this.props.favorito(this.props.pelicula)}>Favoritos</button> */}
-              <button className='' >
-                    <Link to={`/detalle/${id}`} className="btn btn-warning" >Detalle</Link>
-              </button>
-              {
-                this.state.ver === false?
-                <button className='' onClick={()=> this.verMas()}>Ver más</button>
-                
-                :
-                <>
-                <p>{overview}</p>
-                <button className='' onClick={()=> this.verMenos()}> Ver menos </button>
-                
-                </>
-              }
-
-              </article>
-          
-      )
+        <React.Fragment>
+              <section className="peliculaspop">
+                  <div className= "borde" href="">
+                      <article className="pelicula">
+                          <img className="imagenport" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
+                          <div className= "titaño">
+                              <h3 className ="titulos">{title}</h3>
+                              <h3 className="fecha"></h3>
+                              <button className='' >
+                                  <Link to={`/detalle/${id}`} className="btn btn-warning" >Detalle</Link>
+                              </button>
+                            {
+                              this.state.ver === false?
+                              <button className='' onClick={()=> this.verMas()}>Ver más</button>
+                              
+                              :
+                              <>
+                              <p>{overview}</p>
+                              <button className='' onClick={()=> this.verMenos()}> Ver menos </button>
+                              
+                              </>
+                            }
+                          </div>
+                      
+                      </article>
+                  </div>
+               </section>
+        </React.Fragment>
+        )
   }
 }
 

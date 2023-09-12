@@ -7,6 +7,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import DetallesPeli from "./screens/Detalles/DetallesPeli";
+import Resultados from './screens/Resultados/Resultados'
 
 /// import DetallePelicula from "./screens/DetallePelicula/DetallePelicula";
 
@@ -19,7 +20,7 @@ function App() {
       <Route path = "/favoritos" component= {Favoritos}/>
       <Route path = "/populares" component= {Populares}/>
       <Route path = "/estrenos" component={Estrenos} />
-      {/* <Route path= "/formulario" component={Resultados}/> */}
+      <Route path= "/valor/:search" component={Resultados}/> 
       <Route path = "/detalle/:id" component={DetallesPeli} />
     </Switch>
     <Footer/>

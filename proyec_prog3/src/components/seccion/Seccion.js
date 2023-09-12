@@ -36,16 +36,16 @@ class Seccion extends Component {
     componentDidUpdate(){}
         render(){
             return(
-                        <main className="container">
-                        <h2 className="titulo"> <em>Peliculas mas populares:</em></h2>
+                        <main className="">
+                        <h2 className="barras"> <em>Peliculas mas populares:</em></h2>
 
-                        <section className="cards"> 
+                        <section className="peliculaspop"> 
                             {this.state.pelicula.map((elem,idx)=> <Pelicula key= {elem + idx} datospelicula={elem} />)}
                         </section>
 
-                        <h2 className="titulo2y3"> <em>Proximas peliculas en el cine:</em></h2>
+                        <h2 className="barras"> <em>Proximas peliculas en el cine:</em></h2>
 
-                        <section className="cards2">
+                        <section className="peliculaspop">
                         {this.state.peliculaEstreno.map((elem,idx)=> <PeliculaEstreno key= {elem + idx} datospelicula={elem}/>)}
 
                         </section>
