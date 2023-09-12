@@ -7,6 +7,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import DetallesPeli from "./screens/Detalles/DetallesPeli";
+
 /// import DetallePelicula from "./screens/DetallePelicula/DetallePelicula";
 
 function App() {

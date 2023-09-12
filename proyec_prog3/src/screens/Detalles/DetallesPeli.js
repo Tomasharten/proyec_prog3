@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import '../Detalles/Detalles.css'
+
 
 class DetallesPeli extends Component {
     

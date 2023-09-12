@@ -1,11 +1,10 @@
-.padreFooter{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.footer{
-    font-size: 20px;
+.footer {
+    width: 100%;
+    font-size: 12px;
+    font-family: AgrandirR ;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
-    margin-left: 750px;
+    color: grey;
+}
+.TMDB{
+    width: 10%;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import Formulario from '../../components/formulario/Formulario'
 import Seccion from '../../components/seccion/Seccion'
+import '../Home/Home.css'
 
 
 
