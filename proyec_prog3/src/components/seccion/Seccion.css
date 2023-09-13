@@ -4,4 +4,15 @@
     font-family: AgrandirW;
     font-weight: bolder;
     padding: 10px;
-}   
+}  
+.menulink1 {
+    font-size: 16px;
+    font-family: Kollektif;
+    color: rgb(6, 0, 0);  
+    text-decoration: none;
+    padding: 30px;
+    transition: color .5s;
+}
+.menulink1:hover {
+    color: pink;
+}

@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
-///import Pelicula from '../../components/pelicula/Pelicula';
+import VertodasE from '../../components/VerTodas/vertodasE/VertodasE';
 
 // class Populares extends Component {
     
 // }
-function Estrenos(){
-    return(<p>Estamos en estrenossss</p>)
+class Estrenos extends Component {
+    render() {
+        return(
+            <div> 
+                <br/>
+                <VertodasE/>
+                <br/>
+            </div>
+        )
+    }
 }
 
 export default Estrenos;

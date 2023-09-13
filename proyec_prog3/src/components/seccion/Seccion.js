@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import Pelicula from '../pelicula/Pelicula';
 import PeliculaEstreno from '../peliculaEstreno/PeliculaEstreno';
 import "../seccion/Seccion.css"
+import { Link } from "react-router-dom";
 
 class Seccion extends Component {
     constructor(){
@@ -39,13 +40,17 @@ class Seccion extends Component {
             return(
                         <main className="">
                         <h2 className="barras"> Peliculas mas populares:</h2>
-
+                        <button>
+                            <Link to = "/populares" className='menulink1'>Ver todas</Link>
+                        </button>
                         <section className="peliculaspop"> 
                             {this.state.pelicula.map((elem,idx)=> <Pelicula key= {elem + idx} datospelicula={elem} />)}
                         </section>
 
                         <h2 className="barras"> Proximas peliculas en el cine:</h2>
-
+                        <button>
+                            <Link to = "/estrenos" className='menulink1'>Ver todas</Link>
+                        </button>
                         <section className="peliculaspop">
                         {this.state.peliculaEstreno.map((elem,idx)=> <PeliculaEstreno key= {elem + idx} datospelicula={elem}/>)}
 

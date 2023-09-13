@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import VertodasP from '../../components/VerTodas/vertodasP/VertodasP';
 import '../Populares/Populares.css'
 
 ///import Pelicula from '../../components/Pelicula/Pelicula';
@@ -6,8 +7,16 @@ import '../Populares/Populares.css'
 // class Populares extends Component {
     
 // }
-function Populares(){
-    return(<p>Estamos en Populares</p>)
+class Populares extends Component {
+    render() {
+        return(
+            <div> 
+                <br/>
+                <VertodasP/>
+                <br/>
+            </div>
+        )
+    }
 }
 
 export default Populares;

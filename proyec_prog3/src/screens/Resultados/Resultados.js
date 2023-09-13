@@ -22,11 +22,8 @@ class Resultados extends Component {
         return(
             <React.Fragment>
                     <h2 className= "barras"> RESULTADO DE BUSQUEDA: </h2>
-                    <section className="contenedor">
-                        <h2 className="titulofav"> Resultado Peliculas</h2>
-                        <div className="resultadopeli">
-                            {this.state.resultados.map((elem,idx)=><Pelicula key={elem=idx} datospelicula={elem}/>)}
-                        </div>
+                    <section className="peliculaspop">
+                                {this.state.resultados.map((elem,idx)=><Pelicula key={elem=idx} datospelicula={elem}/>)}
                     </section>
             </React.Fragment>
 
