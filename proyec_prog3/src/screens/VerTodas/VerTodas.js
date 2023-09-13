@@ -1,1 +1,0 @@
-import '../VerTodas/Vertodas.css'
