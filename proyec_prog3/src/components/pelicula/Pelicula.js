@@ -30,32 +30,31 @@ class Pelicula extends Component {
    
       return (
         <React.Fragment>
-              
-                  <div className= "borde" href="">
+              <section className="peliculaspop">
                       <article className="pelicula">
                           <img className="imagenport" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
                           <div className= "titaño">
                               <h3 className ="titulos">{title}</h3>
                               <h3 className="fecha"></h3>
-                              <button className='' >
+                              <button className='botonP' >
                                   <Link to={`/detalle/${id}`} className="btn btn-warning" >Detalle</Link>
                               </button>
                             {
                               this.state.ver === false?
-                              <button className='' onClick={()=> this.verMas()}>Ver más</button>
+                              <button className='botonP' onClick={()=> this.verMas()}>Ver más</button>
                               
                               :
                               <>
                               <p>{overview}</p>
-                              <button className='' onClick={()=> this.verMenos()}> Ver menos </button>
+                              <button className='botonP' onClick={()=> this.verMenos()}> Ver menos </button>
                               
                               </>
                             }
                           </div>
                       
                       </article>
-                  </div>
-               
+        </section>
+
         </React.Fragment>
         )
   }

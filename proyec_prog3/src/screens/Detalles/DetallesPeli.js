@@ -28,30 +28,30 @@ class DetallesPeli extends Component {
     render(){
         return(
             
-            <section className="contenedorpadre">
+        <section className="contenedorpadre">
             <div className="cajagrande">
-                {this.state.pelicula !==""?
-                <>
-                    <img className="imgpelicula" src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`}alt='por favor loco aparece'/>
-                    <div className="contenedorpadre2">
-                        <h2 className="titulo" >{this.state.pelicula.original_title}</h2> 
-                        <p className="calificacion"> Calificación: {this.state.pelicula.vote_average}</p>
-                        <p className="fecha"> Fecha de estreno: {this.state.pelicula.release_date}</p>
-                        <p className="genero">Género: {this.state.pelicula.genres[0].name} </p>
-                        <p className="duracion"> Duración: {this.state.pelicula.runtime}</p>
-                        <p className="sinposis"> Sinopsis: {this.state.pelicula.overview}</p>
+                <img className="imgpelicula" src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`}alt='por favor loco aparece'/>
+                    {this.state.pelicula !==""?
+                    <>
+                        <div className="contenedorpadre2">
+                            <h2 className="titulo" >{this.state.pelicula.original_title}</h2> 
+                            <p className="calificacion"> Calificación: {this.state.pelicula.vote_average}</p>
+                            <p className="fecha"> Fecha de estreno: {this.state.pelicula.release_date}</p>
+                            <p className="genero">Género: {this.state.pelicula.genres[0].name} </p>
+                            <p className="duracion"> Duración: {this.state.pelicula.runtime}</p>
+                            <p className="sinposis"> Sinopsis: {this.state.pelicula.overview}</p>
 
-                        {/* <a className="botonFavs" href="">Agregar a favoritos</a>
-                        <form action="" method=" GET">
-                            <input type="radio" name="Favoritos" value="Agregar a favoritos" className="circuloFavoritos"/> 
-                            <label className="favoritos"> Agregar a favoritos</label>
-                            <a href="favorite.html"></a>
-                        </form> */}
-                    </div> 
+                            {/* <a className="botonFavs" href="">Agregar a favoritos</a>
+                            <form action="" method=" GET">
+                                <input type="radio" name="Favoritos" value="Agregar a favoritos" className="circuloFavoritos"/> 
+                                <label className="favoritos"> Agregar a favoritos</label>
+                                <a href="favorite.html"></a>
+                            </form> */}
+                        </div> 
                 </>:
                 <h1>Cargando...</h1>
                 }
-            </div>  
+            </div> 
             </section>
         )
     }

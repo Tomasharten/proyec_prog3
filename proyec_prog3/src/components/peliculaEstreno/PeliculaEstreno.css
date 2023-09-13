@@ -2,8 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between; 
-    margin: 1%1%5%1%
+    justify-content: space-around; 
+    margin: 1% 1%5% 1%
  }
  .borde{
     background-color: rgba(41, 43, 44, 0.668);
@@ -16,24 +16,25 @@
     flex-wrap: wrap;
     padding: 10px;
     justify-content: center;
-    margin:1%1%3%1%;
+    margin:1% 1% 3% 1%;
 }
 .fecha {
     margin: 0% 0% 6% 0%;
 }
 .imagenport{
-    margin:1%1%3%1%;
-    width: 200px;
-    height: 150px;
+    width: 190px;
+    height: 200px;
+
 }
 .imagenport:hover { /* Para que se agrande la foto cuando la seleccionas */
-    width: 170px;
+    width: 270px;
 }
 .titaño{
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 10px;
     font-family: Kollektif;
+
 }
 .barras{ 
     font-size: 20px;
@@ -41,4 +42,10 @@
     font-family: AgrandirW;
     font-weight: bolder;
     padding: 10px;
+}
+.botonP{
+        border-radius: 30px; /* Para que la forma sea cirular y no un cuadrado */
+        padding: 7px;
+        background-color: rgba(227, 224, 224, 0.763);
+        font-family:Kollektif ;
 }

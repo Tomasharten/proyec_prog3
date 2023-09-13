@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Pelicula from '../pelicula/Pelicula';
 import PeliculaEstreno from '../peliculaEstreno/PeliculaEstreno';
+import "../seccion/Seccion.css"
 
 class Seccion extends Component {
     constructor(){
@@ -37,13 +38,13 @@ class Seccion extends Component {
         render(){
             return(
                         <main className="">
-                        <h2 className="barras"> <em>Peliculas mas populares:</em></h2>
+                        <h2 className="barras"> Peliculas mas populares:</h2>
 
                         <section className="peliculaspop"> 
                             {this.state.pelicula.map((elem,idx)=> <Pelicula key= {elem + idx} datospelicula={elem} />)}
                         </section>
 
-                        <h2 className="barras"> <em>Proximas peliculas en el cine:</em></h2>
+                        <h2 className="barras"> Proximas peliculas en el cine:</h2>
 
                         <section className="peliculaspop">
                         {this.state.peliculaEstreno.map((elem,idx)=> <PeliculaEstreno key= {elem + idx} datospelicula={elem}/>)}
