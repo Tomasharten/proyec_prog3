@@ -35,11 +35,11 @@ class DetallesPeli extends Component {
                     <img className="imgpelicula" src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`}alt='por favor loco aparece'/>
                     <div className="contenedorpadre2">
                         <h2 className="titulo" >{this.state.pelicula.original_title}</h2> 
-                        <p className="calificacion"> {this.state.pelicula.vote_average}</p>
-                        <p className="fecha"> {this.state.pelicula.release_date}</p>
-                        <p className="genero">{this.state.pelicula.genres[0].name} </p>
-                        <p className="duracion"> {this.state.pelicula.runtime}</p>
-                        <p className="sinposis"> {this.state.pelicula.overview}</p>
+                        <p className="calificacion"> Calificación: {this.state.pelicula.vote_average}</p>
+                        <p className="fecha"> Fecha de estreno: {this.state.pelicula.release_date}</p>
+                        <p className="genero">Género: {this.state.pelicula.genres[0].name} </p>
+                        <p className="duracion"> Duración: {this.state.pelicula.runtime}</p>
+                        <p className="sinposis"> Sinopsis: {this.state.pelicula.overview}</p>
 
                         {/* <a className="botonFavs" href="">Agregar a favoritos</a>
                         <form action="" method=" GET">

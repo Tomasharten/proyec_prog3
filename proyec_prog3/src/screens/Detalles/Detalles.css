@@ -5,3 +5,42 @@ body{
     background-color: #0f1819;
     width: 100%;
 }
+.contenedorpadre { /* Es la flex box que contiene todo*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100vw; /* Para que ocupe la pantalla entera y despues se pueda centrar*/
+    margin: 1% 1% 7% 1%;
+} 
+.cajagrande { 
+    display: flex; /* Se mueven los items para el costado y no se van abajo*/
+    height: 50vh; /* Queda centrado en el medio*/
+    align-items: flex-start; /* Para que queden todos alineados al en el "start" de la caja*/
+    }
+.imgpelicula {
+    width: 700px;
+    height: 500px;
+    border-radius: 30px; 
+}
+.fecha {
+    margin: 0% 0% 6% 0%;
+    color:aliceblue;
+}
+.titulo{
+    color:aliceblue
+}
+.calificacion{
+    color:aliceblue
+}
+.genero{
+    color:aliceblue
+}
+.duracion{
+    color:aliceblue
+}
+.sinposis{
+    color:aliceblue
+}

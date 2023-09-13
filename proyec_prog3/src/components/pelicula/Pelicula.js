@@ -30,7 +30,7 @@ class Pelicula extends Component {
    
       return (
         <React.Fragment>
-              <section className="peliculaspop">
+              
                   <div className= "borde" href="">
                       <article className="pelicula">
                           <img className="imagenport" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
@@ -55,7 +55,7 @@ class Pelicula extends Component {
                       
                       </article>
                   </div>
-               </section>
+               
         </React.Fragment>
         )
   }
