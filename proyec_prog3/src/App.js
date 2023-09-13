@@ -10,6 +10,7 @@ import DetallesPeli from "./screens/Detalles/DetallesPeli";
 import Resultados from './screens/Resultados/Resultados'
 import VertodasE from './components/VerTodas/vertodasE/VertodasE'
 import VertodasP from './components/VerTodas/vertodasP/VertodasP'
+import Notfound from "./components/notfound/Notfound"
 
 /// import DetallePelicula from "./screens/DetallePelicula/DetallePelicula";
 
@@ -26,8 +27,7 @@ function App() {
       <Route path = "/detalle/:id" component={DetallesPeli} />
       <Route path='/VertodasP' component={VertodasP}/>
       <Route path='/VertodasE' component={VertodasE}/>
-
-
+      <Route path='' component={Notfound}/>
     </Switch>
     <Footer/>
     </React.Fragment>    
