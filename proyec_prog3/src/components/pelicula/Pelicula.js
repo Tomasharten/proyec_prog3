@@ -42,23 +42,27 @@ class Pelicula extends Component {
         //Guardo en un array 
         let favoritos = []
         //guardo en local storage
+        let recuperoStorage= localStorage.getItem("favoritos")
+      
+        if (recuperoStorage !== null){
+         favoritos= JSON.parse(recuperoStorage)
+        }
+        if (favoritos.includes(id)){
+            //si el array esta tengo que sacarlo del array
+          favoritos= favoritos.filter(unId => unId!==id) 
+          this.setState({
+            textoBoton: "Agregar a favortios"
+          })           
+        }else{
+            // si el array no esta
+            favoritos.push(id)
+            this.setState({
+              textoBoton: "Quitar de favortios"
+            })
+        }
         let favtoString= JSON.stringify(favoritos)
         localStorage.setItem("favoritos", favtoString)
 
-        // if (recuperoStorage !== null){
-        //     favoritos=recuperoStorage
-        // }
-        // if (favoritos.includes(this.props.datospelicula.id)){
-        //     //si el array esta tengo que sacarlo del array
-        //     favoritos.filter(id)
-        // }else{
-        //     // si el array no esta
-        //     favoritos.push(id)
-        // }
-        // Hago que cambie el botón
-        this.setState({
-            textoBoton:"Quitar de favoritos"
-        })
     }
 
 
@@ -101,4 +105,4 @@ class Pelicula extends Component {
   }
 }
 
-export default Pelicula
+export default Pelicula
