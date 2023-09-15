@@ -34,7 +34,7 @@ class Favoritos extends Component{
                         <h2 className="barras"> Favoritos:</h2>
                         <section className="peliculaspop"> 
                             {this.state.favorito.length === 0 ?
-                                <p>No tiene favoritos</p>    
+                                <h1 className='barras'>No tiene favoritos</h1>    
                         :
                         <>
                         {this.state.favorito.map((elem,idx)=> <Pelicula key= {elem + idx} datospelicula={elem} />)}

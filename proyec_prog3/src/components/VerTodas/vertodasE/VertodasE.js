@@ -28,11 +28,20 @@ class VertodasE extends Component{
         }))
         .catch(erorres=>console.log("Estos son los errores"+ erorres))
     }
+    peliculaFiltroE(textoFiltro){
+        let filtroPeliculaE = this.state.peliculasestreno.filter(datospelicula => {
+            return datospelicula.title.includes(textoFiltro) 
+        })
+  
+        this.setState({
+            peliculasestreno: filtroPeliculaE,
+        })
+    }
 render(){
     return(
         <React.Fragment>
                     <h2 className="barras"> Proximos estrenos: </h2>
-                    <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+                    <Filtro filtrar={(textoFiltro) => this.peliculaFiltroE(textoFiltro)} />
                     <section className="peliculaspop">
                     
                         {

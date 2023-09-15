@@ -29,11 +29,24 @@ class VertodasP extends Component{
             peliculas: data.results, 
         }))
      }
+     peliculaFiltro(textoFiltro){
+        let filtroPelicula = this.state.peliculas.filter(datospelicula => {
+            return datospelicula.title.includes(textoFiltro) 
+        })
+  
+        this.setState({
+            peliculas: filtroPelicula
+        })
+  
+    }
+  
      render(){
         return(
             <React.Fragment>
                     <h2 className="barras"> Todas las peliculas populares: </h2>
-                    <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
+
+                    <Filtro filtrar={(textoFiltro) => this.peliculaFiltro(textoFiltro)} />
+
                     <section className="peliculaspop">
                     
                         {

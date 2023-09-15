@@ -21,12 +21,27 @@ class Resultados extends Component {
     render(){
         return(
             <React.Fragment>
-                    <h2 className= "barras"> RESULTADO DE BUSQUEDA: </h2>
+                <h2 className= "barras"> RESULTADO DE BUSQUEDA: </h2>
+
+
+            {
+                this.state.resultados.length!== 0 ?
+                
+            <React.Fragment>
                     <section className="peliculaspop">
                                 {this.state.resultados.map((elem,idx)=><Pelicula key={elem=idx} datospelicula={elem}/>)}
                     </section>
             </React.Fragment>
+            :
+            <>
+            <React.Fragment>
+                <h1>No hay resultados de tu busqueda:{this.props.match.params.search}</h1>
+            </React.Fragment>
+            </>
+        }
+                </React.Fragment>
+
         )
-    }
+    } 
 }
 export default Resultados

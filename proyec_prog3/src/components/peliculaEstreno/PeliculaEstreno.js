@@ -64,13 +64,8 @@ class PeliculaEstreno extends Component {
         let favtoString= JSON.stringify(favoritos)
         localStorage.setItem("favoritos", favtoString)
 
-    }
-    // filtroPelicula(textoFiltrado){
-    //   let peliculaFiltrada= this.state.data.filter(pelicula=>{
-    //     return pelicula.name.includes(textoFiltrado)
-    //   })
-      
-    // }
+  }
+  
   render() {
 
     let {poster_path, title, overview, id} = this.props.datospelicula
