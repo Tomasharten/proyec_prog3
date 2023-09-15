@@ -9,7 +9,7 @@ class Pelicula extends Component {
       this.state = {
           ver : false,
           props:props, 
-          favortios:false, 
+          textoBoton:"Agregar a favoritos", 
       }
   }
   
@@ -24,45 +24,47 @@ class Pelicula extends Component {
         ver:false
     })
   }
-//   componentDidMount(){
-//     let recuperoStorage = localStorage.getItem ("favoritos");
-//     if (recuperoStorage !== null) {
-//         let favoritos = JSON.parse (recuperoStorage);
-//         console.log(favoritos.includes(this.props.datospelicula.id));
-//         if (favoritos.includes(this.props.datospelicula.id)){
-//           this.setState ({
-//               favoritos: true
-//           })
-// }
-//       }
- 
-//   }
-//   agregarYSacarDeFavs (id){
-//     let favoritos = [];
-//     let recuperoStorage = localStorage.getItem ("favoritos");
 
-//     if (recuperoStorage !== null) {  
-//         favoritos = JSON.parse(recuperoStorage);
-//     }
+  componentDidMount(){
+    //Chequea si el id esta en el array de favoritos y cambiarle el botón si ya está.  
+    let recuperoStorage = localStorage.getItem("favoritos")
+    if (recuperoStorage !== null) {
+        let favoritos = JSON.parse(recuperoStorage);
+        if (favoritos.includes(this.props.datospelicula.id)){
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+    }
+    //Si esta, cambiar el texto del botón
+  }
+    agregarYSacarDeFavs(id) {
+        //Guardo en un array 
+        let favoritos = []
+        //guardo en local storage
+        let recuperoStorage= localStorage.getItem("favoritos")
+      
+        if (recuperoStorage !== null){
+         favoritos= JSON.parse(recuperoStorage)
+        }
+        if (favoritos.includes(id)){
+            //si el array esta tengo que sacarlo del array
+          favoritos= favoritos.filter(unId => unId!==id) 
+          this.setState({
+            textoBoton: "Agregar a favortios"
+          })           
+        }else{
+            // si el array no esta
+            favoritos.push(id)
+            this.setState({
+              textoBoton: "Quitar de favortios"
+            })
+        }
+        let favtoString= JSON.stringify(favoritos)
+        localStorage.setItem("favoritos", favtoString)
 
-//     if (favoritos.includes (id)){ 
-//         favoritos = favoritos.filter (unId => unId !== id )
-//         this.setState ({
-//             favoritos: false
-//         })
+    }
 
-//      } else {
-//         favoritos.push (id);
-//         this.setState ({
-//             favoritos: true,
-//         })
-//      }
-
-
-//     let favoritostoString= JSON.stringify(favoritos);
-//     localStorage.setItem ("favoritos", favoritostoString);
-
-//   }
 
   render() {
 
@@ -90,15 +92,8 @@ class Pelicula extends Component {
                               
                               </>
                             }
-                            {
-                              this.state.favortios ===false?
-                                <button onClick={()=> this.agregarYSacarDeFavs(this.props.datospelicula.id)} type="button" className="botonP"> Agregar a fav </button>
-                              
-                              :
-                              <>
-                                <button onClick={()=> this.agregarYSacarDeFavs(this.props.datospelicula.id)} type="button" className="botonP"> Quitar de fav </button>
-                              </>
-                            }
+                            
+                            <button type="button" onClick={()=> this.agregarYSacarDeFavs(this.props.datospelicula.id)} className="botonP"> {this.state.textoBoton} </button>            
                             
                           </div>
                       
@@ -110,4 +105,4 @@ class Pelicula extends Component {
   }
 }
 
-export default Pelicula
+export default Pelicula

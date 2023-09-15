@@ -8,7 +8,8 @@ class PeliculaEstreno extends Component {
       super(props)
       this.state = {
           ver : false,
-          props:props
+          props:props,
+          textoBoton: "Agregar a favoritos"
       }
   }
   
@@ -24,6 +25,45 @@ class PeliculaEstreno extends Component {
     })
   }
 
+  componentDidMount(){
+    //Chequea si el id esta en el array de favoritos y cambiarle el botón si ya está.  
+    let recuperoStorage = localStorage.getItem("favoritos")
+    if (recuperoStorage !== null) {
+        let favoritos = JSON.parse(recuperoStorage);
+        if (favoritos.includes(this.props.datospelicula.id)){
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+    }
+    //Si esta, cambiar el texto del botón
+  }
+    agregarYSacarDeFavs(id) {
+        //Guardo en un array 
+        let favoritos = []
+        //guardo en local storage
+        let recuperoStorage= localStorage.getItem("favoritos")
+      
+        if (recuperoStorage !== null){
+         favoritos= JSON.parse(recuperoStorage)
+        }
+        if (favoritos.includes(id)){
+            //si el array esta tengo que sacarlo del array
+          favoritos= favoritos.filter(unId => unId!==id) 
+          this.setState({
+            textoBoton: "Agregar a favortios"
+          })           
+        }else{
+            // si el array no esta
+            favoritos.push(id)
+            this.setState({
+              textoBoton: "Quitar de favortios"
+            })
+        }
+        let favtoString= JSON.stringify(favoritos)
+        localStorage.setItem("favoritos", favtoString)
+
+    }
   render() {
 
     let {poster_path, title, overview, id} = this.props.datospelicula
@@ -51,6 +91,8 @@ class PeliculaEstreno extends Component {
                               
                               </>
                             }
+                              <button type="button" onClick={()=> this.agregarYSacarDeFavs(this.props.datospelicula.id)} className="botonP"> {this.state.textoBoton} </button>            
+
                           </div>
                       
                       </article>
@@ -62,4 +104,4 @@ class PeliculaEstreno extends Component {
   }
 }
 
-export default PeliculaEstreno
+export default PeliculaEstreno

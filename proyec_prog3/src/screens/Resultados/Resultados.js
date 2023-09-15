@@ -26,8 +26,6 @@ class Resultados extends Component {
                                 {this.state.resultados.map((elem,idx)=><Pelicula key={elem=idx} datospelicula={elem}/>)}
                     </section>
             </React.Fragment>
-
-
         )
     }
 }
