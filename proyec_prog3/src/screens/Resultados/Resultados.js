@@ -35,7 +35,7 @@ class Resultados extends Component {
             :
             <>
             <React.Fragment>
-                <h1>No hay resultados de tu busqueda:{this.props.match.params.search}</h1>
+                <h1 className='barras'>No hay resultados de tu busqueda:{this.props.match.params.search}</h1>
             </React.Fragment>
             </>
         }
