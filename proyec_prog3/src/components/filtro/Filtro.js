@@ -7,15 +7,15 @@ class Filtro extends Component{
             valor:""
         }
     }
-    evitarSubmit(event){
-        event.preventDefault()
-    }
+
     controlarCambios(event){
         this.setState({
             valor:event.target.value
         }, 
         () => this.props.filtrar(this.state.valor))
-        return true 
+    }
+    evitarSubmit(event){
+        event.preventDefault()
     }
     render(){
         return(

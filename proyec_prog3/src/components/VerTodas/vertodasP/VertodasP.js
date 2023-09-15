@@ -55,7 +55,6 @@ class VertodasP extends Component{
 
                 <Filtro filtrar={(textoFiltro) => this.peliculaFiltro(textoFiltro)} />
                 <section className="peliculaspop">
-                    
                         {
                             this.state.cargar === true?
                             
