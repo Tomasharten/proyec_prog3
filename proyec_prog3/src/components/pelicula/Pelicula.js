@@ -65,6 +65,7 @@ class Pelicula extends Component {
 
     }
 
+
   render() {
 
     let {poster_path, title, overview, id} = this.props.datospelicula

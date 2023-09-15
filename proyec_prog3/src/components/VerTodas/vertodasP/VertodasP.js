@@ -3,13 +3,14 @@ import Pelicula from "../../../components/pelicula/Pelicula"
 // import Filtro from "../filtro/Filtro"
 import './VertodasP.css'
 import Filtro from '../../filtro/Filtro'
-
+import Loader from "../../loader/Loader"
 
 class VertodasP extends Component{
      constructor(){
         super();
         this.state={
-            peliculas: []
+            peliculas: [],
+            isLoading : true
         }
      }
      cargarMas(){
@@ -25,10 +26,14 @@ class VertodasP extends Component{
      componentDidMount(){
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=75196a6b12119e0621f7373e3de1a94a ")
         .then(res=> res.json())
-        .then(data => this.setState({
-            peliculas: data.results, 
-        }))
-     }
+        .then(data => {this.setState({
+            peliculas: data.results});
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+              }, 3000);
+            })
+        .catch(e=>("este es el error " + e))
+        }  
      peliculaFiltro(textoFiltro){
         let filtroPelicula = this.state.peliculas.filter(datospelicula => {
             return datospelicula.title.includes(textoFiltro) 
@@ -43,11 +48,16 @@ class VertodasP extends Component{
      render(){
         return(
             <React.Fragment>
-                    <h2 className="barras"> Todas las peliculas populares: </h2>
+                    
+                    {this.state.isLoading ? (
+                        <Loader/>
+                    )
+                :(
+                    <React.Fragment>
+                <h2 className="barras"> Todas las peliculas populares: </h2>
 
-                    <Filtro filtrar={(textoFiltro) => this.peliculaFiltro(textoFiltro)} />
-
-                    <section className="peliculaspop">
+                <Filtro filtrar={(textoFiltro) => this.peliculaFiltro(textoFiltro)} />
+                <section className="peliculaspop">
                     
                         {
                             this.state.cargar === true?
@@ -71,6 +81,8 @@ class VertodasP extends Component{
                         }
                     
                 </section>
+                </React.Fragment>)}
+                    
             </React.Fragment>
         )
     }
