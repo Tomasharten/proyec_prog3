@@ -43,7 +43,7 @@ class Pelicula extends Component {
         let favoritos = []
         //guardo en local storage
         let recuperoStorage= localStorage.getItem("favoritos")
-      
+
         if (recuperoStorage !== null){
          favoritos= JSON.parse(recuperoStorage)
         }
