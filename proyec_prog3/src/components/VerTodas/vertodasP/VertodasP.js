@@ -35,10 +35,7 @@ class VertodasP extends Component{
         .catch(e=>("este es el error " + e))
         }  
      peliculaFiltro(textoFiltro){
-        let filtroPelicula = this.state.peliculas.filter(datospelicula => {
-            return datospelicula.title.includes(textoFiltro) 
-        })
-  
+        let filtroPelicula = this.state.peliculas.filter((datos)=>datos.title.toLowerCase().includes(textoFiltro.toLowerCase()))
         this.setState({
             peliculas: filtroPelicula
         })

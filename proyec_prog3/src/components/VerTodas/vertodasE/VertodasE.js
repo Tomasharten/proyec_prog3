@@ -29,10 +29,7 @@ class VertodasE extends Component{
         .catch(erorres=>console.log("Estos son los errores"+ erorres))
     }
     peliculaFiltroE(textoFiltro){
-        let filtroPeliculaE = this.state.peliculasestreno.filter(datospelicula => {
-            return datospelicula.title.includes(textoFiltro) 
-        })
-  
+        let filtroPeliculaE = this.state.peliculasestreno.filter((datos)=>datos.title.toLowerCase().includes(textoFiltro.toLowerCase()))
         this.setState({
             peliculasestreno: filtroPeliculaE,
         })
