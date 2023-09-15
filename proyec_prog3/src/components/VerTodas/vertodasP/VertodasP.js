@@ -2,6 +2,8 @@ import React, {Component} from "react"
 import Pelicula from "../../../components/pelicula/Pelicula"
 // import Filtro from "../filtro/Filtro"
 import './VertodasP.css'
+import Filtro from '../../filtro/Filtro'
+
 
 class VertodasP extends Component{
      constructor(){
@@ -31,6 +33,7 @@ class VertodasP extends Component{
         return(
             <React.Fragment>
                     <h2 className="barras"> Todas las peliculas populares: </h2>
+                    <Filtro filtrar={(texto) => this.filtrarPeliculas(texto)} />
                     <section className="peliculaspop">
                     
                         {

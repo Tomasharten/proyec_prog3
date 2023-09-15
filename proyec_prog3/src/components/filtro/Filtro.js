@@ -21,9 +21,8 @@ class Filtro extends Component{
         return(
             <div>
                 <form action="" className="" method="get" onSubmit={(event)=> this.evitarSubmit(event)}>
-                <label>Buscador:</label>
                 <input type="text" value={this.state.valor} onChange={(event) => this.controlarCambios(event)}></input>
-                <input type="submit" value='Submit'> </input>
+                <button type='submit'>Filtrar</button>
                 </form>
             </div>
         )

@@ -25,6 +25,7 @@ class PeliculaEstreno extends Component {
     })
   }
 
+
   componentDidMount(){
     //Chequea si el id esta en el array de favoritos y cambiarle el botón si ya está.  
     let recuperoStorage = localStorage.getItem("favoritos")
@@ -64,6 +65,12 @@ class PeliculaEstreno extends Component {
         localStorage.setItem("favoritos", favtoString)
 
     }
+    // filtroPelicula(textoFiltrado){
+    //   let peliculaFiltrada= this.state.data.filter(pelicula=>{
+    //     return pelicula.name.includes(textoFiltrado)
+    //   })
+      
+    // }
   render() {
 
     let {poster_path, title, overview, id} = this.props.datospelicula
