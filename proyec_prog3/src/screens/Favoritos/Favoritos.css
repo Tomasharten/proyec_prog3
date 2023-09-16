@@ -6,3 +6,8 @@ body{
     width: 100%;
 }
 
+@media (max-width: 450px) {
+    body {
+        margin: 1px;
+    }
+    }

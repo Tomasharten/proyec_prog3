@@ -51,3 +51,19 @@
     background-color: rgba(227, 224, 224, 0.763);
     font-family:Kollektif ;
 }
+
+@media (max-width: 450px) {
+    .barras{
+        padding: 2px;
+        width: 100%;
+}
+.pelicula {
+    margin-bottom: 10%;
+    padding: 5%;
+}
+.peliculaspop{
+    flex-direction: column;
+    align-items: center;
+}
+
+}

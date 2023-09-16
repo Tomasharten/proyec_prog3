@@ -61,3 +61,31 @@ body{
     color: white;
     margin: 0px 0px 20px;
     font-family: AgrandirW;}
+
+    @media (max-width: 450px) {
+        .contenedorpadre2 {
+            padding: 15px;
+            max-width: 600px; /* Para que el texto no se vaya para abajo, si no que se quede dentro de la caja */
+        }
+        .contenedorpadre { /* Es la flex box que contiene todo*/
+            margin: 0% 1% 38% 1%;
+        } 
+        .cajagrande { 
+            display: block; 
+            }
+        .contenedorpadre2 p {
+            margin: 0px 0px 20px; /* Para que solo se modifique el margin de abajo */
+            font-size: 16px;
+            }   
+            .imgpelicula {
+                width: 400px;
+            }
+
+    
+    }
+
+    @media (max-width: 450px) {
+        body {
+            margin: 1px;
+        }
+        }
